@@ -29,7 +29,7 @@ const Sidebar = ({ activeSection }) => {
       {/* Logo */}
       <h2 style={{ marginTop: '-10rem' }}>
         <img
-          src="/images/my logo.png"
+          src={`${import.meta.env.BASE_URL}images/my logo.png`}
           alt="Logo"
           style={{ width: '15vh', display: 'flex', justifySelf: 'center' }}
         />

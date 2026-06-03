@@ -146,7 +146,7 @@ const Projects = () => {
             {projectsData.map((project, idx) => (
               <div key={idx} className="project-card-modern">
                 <div className="project-thumb">
-                  <img src={project.image} alt={project.title} />
+                  <img src={`${import.meta.env.BASE_URL}${project.image.startsWith('/') ? project.image.substring(1) : project.image}`} alt={project.title} />
                 </div>
                 <div className="project-body">
                   <div className="project-header-row">

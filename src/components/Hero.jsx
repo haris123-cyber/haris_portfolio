@@ -87,7 +87,7 @@ const Hero = () => {
         <div className="hero-image-wrapper">
           <div className="bg-blob"></div>
           <div className="profile-card">
-            <img src="/images/my.jpg" alt="Haris Profile" />
+            <img src={`${import.meta.env.BASE_URL}images/my.jpg`} alt="Haris Profile" />
           </div>
         </div>
       </div>
