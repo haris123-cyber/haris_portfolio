@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Sidebar = ({ activeSection }) => {
+const Sidebar = ({ activeSection, isOpen, closeMenu }) => {
   const menuItems = [
     { id: 'home', label: 'Home', icon: 'fas fa-home' },
     { id: 'about', label: 'About', icon: 'fas fa-user-astronaut' },
@@ -22,18 +20,19 @@ const Sidebar = ({ activeSection }) => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    if (closeMenu) closeMenu();
   };
 
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar ${isOpen ? 'open' : ''}`}>
       {/* Logo */}
-      <h2 style={{ marginTop: '-10rem' }}>
+      <div className="sidebar-logo-container">
         <img
           src={`${import.meta.env.BASE_URL}images/my logo.png`}
           alt="Logo"
-          style={{ width: '15vh', display: 'flex', justifySelf: 'center' }}
+          className="sidebar-logo"
         />
-      </h2>
+      </div>
 
       {/* Nav Menu */}
       <div className="nav-menu">

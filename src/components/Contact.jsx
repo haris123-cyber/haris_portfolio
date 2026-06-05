@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -59,8 +59,9 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <h2 className="section-title">Get In Touch</h2>
-      <div className="contact-container">
+      <div className="section-inner">
+        <h2 className="section-title">Get In Touch</h2>
+        <div className="contact-container">
         {/* Contact Info Card */}
         <div className="contact-info-card">
           <h3 style={{ color: 'white', fontSize: '1.8rem' }}>Let's Talk</h3>
@@ -169,6 +170,7 @@ const Contact = () => {
             {status}
           </button>
         </form>
+        </div>
       </div>
     </section>
   );

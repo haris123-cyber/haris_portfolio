@@ -1,5 +1,3 @@
-import React from 'react';
-
 const About = () => {
   const services = [
     {
@@ -30,7 +28,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="about-content-minimal">
+      <div className="section-inner about-content-minimal">
         <h2 className="section-title">ABOUT ME</h2>
 
         <div className="about-text-block">

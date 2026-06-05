@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Skills = () => {
   const frontendSkills = [
     { name: 'HTML / CSS', percentage: 90 },
@@ -22,8 +20,9 @@ const Skills = () => {
 
   return (
     <section id="skills">
-      <h2 className="section-title">My Skills</h2>
-      <div className="skills-grid">
+      <div className="section-inner">
+        <h2 className="section-title">My Skills</h2>
+        <div className="skills-grid">
         {/* Frontend Skill Card */}
         <div className="skill-card">
           <h3>
@@ -58,6 +57,7 @@ const Skills = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

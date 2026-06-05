@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Projects = () => {
   const projectsData = [
@@ -75,15 +75,22 @@ const Projects = () => {
     }
   };
 
+  const isMobileSlider = () => window.matchMedia('(max-width: 600px)').matches;
+
   useEffect(() => {
     const handleResize = () => {
+      if (isMobileSlider()) {
+        if (trackRef.current) trackRef.current.style.transform = 'none';
+        setMaxIndex(projectsData.length - 1);
+        return;
+      }
+
       updateSlidePosition(currentIndex);
 
       if (trackRef.current) {
         const containerWidth = trackRef.current.parentElement.getBoundingClientRect().width;
         const offset = getSlideOffset();
         if (offset > 0) {
-          // Calculate how many cards fit on screen based on card width
           const visible = Math.round(containerWidth / offset) || 1;
           const calculatedMaxIndex = Math.max(0, projectsData.length - visible);
           setMaxIndex(calculatedMaxIndex);
@@ -127,9 +134,10 @@ const Projects = () => {
 
   return (
     <section id="projects">
-      <h2 className="section-title">My Projects</h2>
+      <div className="section-inner">
+        <h2 className="section-title">My Projects</h2>
 
-      <div className="projects-slider-container">
+        <div className="projects-slider-container">
         {/* Left Arrow */}
         <button
           onClick={slidePrev}
@@ -185,15 +193,16 @@ const Projects = () => {
         </button>
       </div>
 
-      {/* Pagination Dots */}
-      <div className="slider-dots">
-        {Array.from({ length: dotCount }).map((_, idx) => (
-          <div
-            key={idx}
-            onClick={() => handleDotClick(idx)}
-            className={`dot ${currentIndex === idx ? 'active' : ''}`}
-          ></div>
-        ))}
+        {/* Pagination Dots */}
+        <div className="slider-dots">
+          {Array.from({ length: dotCount }).map((_, idx) => (
+            <div
+              key={idx}
+              onClick={() => handleDotClick(idx)}
+              className={`dot ${currentIndex === idx ? 'active' : ''}`}
+            ></div>
+          ))}
+        </div>
       </div>
     </section>
   );

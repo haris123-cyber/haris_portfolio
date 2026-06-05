@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   const roles = ['Full-Stack Developer', 'Web Developer', 'Freelancer'];
@@ -74,7 +74,7 @@ const Hero = () => {
           </p>
 
           <div className="hero-buttons">
-            <a href="assets/resume.pdf" download className="btn btn-primary">
+            <a href={`${import.meta.env.BASE_URL}images/Haris_M_resume.pdf`} download className="btn btn-primary">
               Download Resume <i className="fas fa-download" style={{ marginLeft: '8px' }}></i>
             </a>
             <a href="#contact" onClick={handleContactScroll} className="btn btn-outline">
