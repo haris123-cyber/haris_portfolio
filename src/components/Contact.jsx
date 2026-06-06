@@ -77,7 +77,7 @@ const Contact = () => {
               <span style={{ display: 'block', color: '#777', fontSize: '0.8rem', textTransform: 'uppercase' }}>
                 Email
               </span>
-              <span style={{ color: 'white', fontSize: '1.1rem' }}>harismkadr@gmail.com</span>
+              <span style={{ color: 'white', fontSize: '1.1rem' }}>harismkdr@gmail.com</span>
             </div>
           </div>
 
